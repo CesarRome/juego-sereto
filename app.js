@@ -1,8 +1,9 @@
-let numeroSecreto=generarNumeroSereto();
+let numeroSecreto=0;
 let intentos=0;
 let listasNumerosSorteados=[];
 let numeroMaximo=10;
 
+console.log(numeroSecreto);
 
 function asignarTextoElemento(elemento,texto){
     let elementoHTML= document.querySelector(elemento);
@@ -10,17 +11,13 @@ function asignarTextoElemento(elemento,texto){
     return;
 
 }
-function intentoDeUsuario(){
-    alert('Click desde el botón');
-    return;
-}
 
 function verificarIntento(){
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
     
-    console.log(intentos);
+   
     if (numeroDeUsuario===numeroSecreto){
-        asignarTextoElemento('p',`Acertaste el número en ${intentos} ${(intentos==1) ? 'vez' : 'veces'}`);
+        asignarTextoElemento('p',`Acertaste el número en ${intentos} ${(intentos===1) ? 'vez' : 'veces'}`);
         document.getElementById('reiniciar').removeAttribute('disabled');
 
     } else {
